@@ -21,6 +21,7 @@ print(torch.__version__)
 
 # COMMAND ----------
 
+# DBTITLE 1,Device recognition
 device = (
     "cuda"
     if torch.cuda.is_available()
@@ -32,6 +33,7 @@ print(f"Using {device} device")
 
 # COMMAND ----------
 
+# DBTITLE 1,Image Transformation specifications
 width = 224
 height = 224
 
