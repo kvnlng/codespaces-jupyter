@@ -7,10 +7,9 @@ import matplotlib.pyplot as plt
 
 import torch
 from torch import nn
-from torchinfo import summary
+# from torchinfo import summary
 from torch.optim.lr_scheduler import ExponentialLR
 # from torchvision import transforms
-from torchinfo import summary
 import torchvision
 torchvision.disable_beta_transforms_warning()
 from torchvision.transforms import v2, InterpolationMode
@@ -47,7 +46,7 @@ data_transform = v2.Compose([
 
 # COMMAND ----------
 
-data_path = Path("/Volumes/catalog1/schema1/data1/food-101")
+data_path = Path("/Volumes/catalog1/schema1/data/food-101")
 image_path = data_path / "images"
 meta_path = data_path / "meta"
 train_path = data_path / "train"
@@ -117,7 +116,7 @@ for name, child in model.named_children():
 preprocess = weights.transforms()
 img_transformed = preprocess(img)
 weights.meta["categories"]
-summary(model, input_size=[BATCH_SIZE, 3, width, height])
+# summary(model, input_size=[BATCH_SIZE, 3, width, height])
 
 # COMMAND ----------
 
